@@ -1,0 +1,49 @@
+line-length = 119
+indent-width = 4
+fix = false
+target-version = "py310"
+
+[format]
+docstring-code-format = true
+
+[lint]
+# flake8のデフォルトルール
+select = [
+    "C9", # mccabeのルール(複雑度)
+    "E", # pycodestyleのルール(PEP8)
+    "F", # pyflakesのルール(構文エラー)
+    "W", # pycodestyleのルール(PEP8)
+    "I", # isortのルール(インポート順)
+    # "N", # pep8-namingのルール(変数名)
+    # "B", # flake8-bugbearのルール(バグにつながる可能性)
+    # "C4", # flake8-comprehensionsのルール(内包表記)
+    # "T20", # flake8-printのルール(print文)
+]
+
+ignore = [
+    "E203", # whitespace before ':'
+    "E501", # line too long
+    "E266", # too many leading '#' for block comment
+    "E721", # do not compare types, use 'isinstance()'
+    "E741", # ambiguous variable name
+    "F601", # dictionary key name repeated with different values
+    "F811", # redefinition of unused '...'
+    "PIE", # module level import not at top of file
+]
+
+unfixable = [
+    "F401", # module imported but unused
+    "F841", # local variable is assigned to but never used
+    # "ERA001", # comment out code
+]
+
+[lint.flake8-quotes]
+docstring-quotes = "double"
+
+[lint.isort]
+combine-as-imports = false
+known-local-folder = ["my_modules"]
+
+[mccabe]
+max-complexity = 20
+

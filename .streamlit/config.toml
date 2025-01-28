@@ -1,0 +1,12 @@
+[client]
+showSidebarNavigation = true
+
+[server]
+fileWatcherType = "poll"
+headless = true
+runOnSave = true
+enableCORS = true
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats = false
